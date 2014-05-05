@@ -9,4 +9,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     d.run "vfarcic/cd_jenkins",
       args: "-d -p 0.0.0.0:49153:8080"
   end
+  config.vm.network :forwarded_port, host: 4567, guest: 49153
 end
