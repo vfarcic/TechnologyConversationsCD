@@ -58,7 +58,7 @@ public class GameTest {
     }
 
     @Test
-    public void advantageShouldBeDescriptionWhenLeastThreePointsHaveNeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
+    public void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
         for (int index = 1; index <= 3; index++) {
             victor.winBall();
         }
