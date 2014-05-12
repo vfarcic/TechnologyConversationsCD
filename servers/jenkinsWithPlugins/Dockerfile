@@ -16,6 +16,8 @@ RUN apt-get install -q -y git
 # Gradle
 ADD https://services.gradle.org/distributions/gradle-1.12-all.zip /opt/gradle-1.12-all.zip
 RUN unzip /opt/gradle-1.12-all.zip -d /opt/
+RUN export GRADLE_HOME=/opt/gradle-1.12
+RUN export PATH=$PATH:$GRADLE_HOME/bin
 
 # Jenkins
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
