@@ -9,7 +9,7 @@ RUN apt-get install -q -y unzip
 
 # JDK
 RUN apt-get install -q -y openjdk-7-jdk && apt-get clean
-RUN export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
 # GIT
 RUN apt-get install -q -y git
@@ -17,8 +17,8 @@ RUN apt-get install -q -y git
 # Gradle
 ADD https://services.gradle.org/distributions/gradle-1.12-all.zip /opt/gradle-1.12-all.zip
 RUN unzip /opt/gradle-1.12-all.zip -d /opt/
-RUN export GRADLE_HOME=/opt/gradle-1.12
-RUN export PATH=$PATH:$GRADLE_HOME/bin
+ENV GRADLE_HOME /opt/gradle-1.12
+ENV PATH $PATH:$GRADLE_HOME/bin
 
 # Jenkins
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
