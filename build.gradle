@@ -14,18 +14,17 @@ dependencies {
     testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
 }
 
-
-checkstyle {
-    ignoreFailures true
-}
-
-findbugs {
-    ignoreFailures true
-}
-
-pmd {
-    ignoreFailures true
-}
+//checkstyle {
+//    ignoreFailures true
+//}
+//
+//findbugs {
+//    ignoreFailures true
+//}
+//
+//pmd {
+//    ignoreFailures true
+//}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
