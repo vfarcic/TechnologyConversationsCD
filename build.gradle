@@ -26,3 +26,7 @@ findbugs {
 pmd {
     ignoreFailures true
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
