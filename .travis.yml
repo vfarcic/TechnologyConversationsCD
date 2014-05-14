@@ -1,7 +1,10 @@
 language: java
 
 before_install:
-- chmod +x gradlew
+  - chmod +x gradlew
+
+env:
+  - TERM=dumb
 
 notifications:
   email:
