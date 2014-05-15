@@ -1,17 +1,18 @@
-package com.technologyconversations.articles.cd;
+package com.technologyconversations.articles.continuousdelivery;
 
 public class Game {
 
     private Player player1;
     private Player player2;
+    private static final int MIN_SCORE_TO_WIN = 3;
 
     public Game(final Player player1Value, final Player player2Value) {
         this.player1 = player1Value;
         this.player2 = player2Value;
     }
 
-    public String getScore() {
-        if (player1.getScore() >= 3 && player2.getScore() >= 3) {
+    public final String getScore() {
+        if (player1.getScore() >= MIN_SCORE_TO_WIN && player2.getScore() >= MIN_SCORE_TO_WIN) {
             if (Math.abs(player2.getScore() - player1.getScore()) >= 2) {
                 return getLeadPlayer().getName() + " won";
             } else if (player1.getScore() == player2.getScore()) {
@@ -24,7 +25,7 @@ public class Game {
         }
     }
 
-    public Player getLeadPlayer() {
+    public final Player getLeadPlayer() {
         if (player1.getScore() > player2.getScore()) {
             return player1;
         } else {
