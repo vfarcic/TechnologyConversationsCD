@@ -18,31 +18,31 @@ Implement a simple tennis game
 */
 public class GameTest {
 
-    Player victor;
-    Player sarah;
-    Game game;
+    private Player victor;
+    private Player sarah;
+    private Game game;
 
     @Before
-    public void beforeGameTest() {
+    public final void beforeGameTest() {
         victor = new Player("Victor");
         sarah = new Player("Sarah");
         game = new Game(victor, sarah);
     }
 
     @Test
-    public void loveShouldBeDescriptionForScore0() {
-        Game game = new Game(victor, sarah);
-        assertThat(game, hasProperty("score", is("love, love")));
+    public final void loveShouldBeDescriptionForScore0() {
+        Game actual = new Game(victor, sarah);
+        assertThat(actual, hasProperty("score", is("love, love")));
     }
 
     @Test
-    public void fifteenShouldBeDescriptionForScore1() {
+    public final void fifteenShouldBeDescriptionForScore1() {
         sarah.winBall();
         assertThat(game, hasProperty("score", is("love, fifteen")));
     }
 
     @Test
-    public void thirtyShouldBeDescriptionForScore2() {
+    public final void thirtyShouldBeDescriptionForScore2() {
         victor.winBall();
         victor.winBall();
         sarah.winBall();
@@ -50,30 +50,35 @@ public class GameTest {
     }
 
     @Test
-    public void fortyShouldBeDescriptionForScore3() {
-        for (int index = 1; index <= 3; index++) {
+    public final void fortyShouldBeDescriptionForScore3() {
+        final int score = 3;
+        for (int index = 1; index <= score; index++) {
                 victor.winBall();
         }
         assertThat(game, hasProperty("score", is("forty, love")));
     }
 
     @Test
-    public void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
-        for (int index = 1; index <= 3; index++) {
+    public final void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
+        final int victorScore = 3;
+        final int sarahScore = 4;
+        for (int index = 1; index <= victorScore; index++) {
             victor.winBall();
         }
-        for (int index = 1; index <= 4; index++) {
+        for (int index = 1; index <= sarahScore; index++) {
             sarah.winBall();
         }
         assertThat(game, hasProperty("score", is("advantage Sarah")));
     }
 
     @Test
-    public void deuceShouldBeDescriptionWhenAtLeastThreePointsHaveBeenScoredByEachPlayerAndTheScoresAreEqual() {
-        for (int index = 1; index <= 3; index++) {
+    public final void deuceShouldBeDescriptionWhenAtLeastThreePointsHaveBeenScoredByEachPlayerAndTheScoresAreEqual() {
+        final int victorScore = 3;
+        final int sarahScore = 3;
+        for (int index = 1; index <= victorScore; index++) {
             victor.winBall();
         }
-        for (int index = 1; index <= 3; index++) {
+        for (int index = 1; index <= sarahScore; index++) {
             sarah.winBall();
         }
         assertThat(game, hasProperty("score", is("deuce")));
@@ -84,11 +89,13 @@ public class GameTest {
     }
 
     @Test
-    public void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMoreThanTheOpponent() {
-        for (int index = 1; index <= 4; index++) {
+    public final void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMoreThanTheOpponent() {
+        final int victorScore = 4;
+        final int sarahScore = 3;
+        for (int index = 1; index <= victorScore; index++) {
             victor.winBall();
         }
-        for (int index = 1; index <= 3; index++) {
+        for (int index = 1; index <= sarahScore; index++) {
             sarah.winBall();
         }
         assertThat(game, hasProperty("score", is(not("Victor won"))));
