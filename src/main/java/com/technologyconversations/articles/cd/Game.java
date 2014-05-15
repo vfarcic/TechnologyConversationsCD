@@ -5,9 +5,9 @@ public class Game {
     private Player player1;
     private Player player2;
 
-    public Game(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public Game(final Player player1Value, final Player player2Value) {
+        this.player1 = player1Value;
+        this.player2 = player2Value;
     }
 
     public String getScore() {
@@ -25,7 +25,11 @@ public class Game {
     }
 
     public Player getLeadPlayer() {
-        return (player1.getScore() > player2.getScore()) ? player1 : player2;
+        if (player1.getScore() > player2.getScore()) {
+            return player1;
+        } else {
+            return player2;
+        }
     }
 
 }
