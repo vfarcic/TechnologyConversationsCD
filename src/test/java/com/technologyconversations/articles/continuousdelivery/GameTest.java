@@ -12,9 +12,11 @@ Implement a simple tennis game
 **Rules:**
 
 * Scores from zero to three points are described as "love", "fifteen", "thirty", and "forty" respectively.
-* If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is "advantage" for the player in the lead.
+* If at least three points have been scored by each side and a player has one more point than his opponent,
+* the score of the game is "advantage" for the player in the lead.
 * If at least three points have been scored by each player, and the scores are equal, the score is "deuce".
-* A game is won by the first player to have won at least four points in total and at least two points more than the opponent.
+* A game is won by the first player to have won at least four points in total and at least two points more
+* than the opponent.
 */
 public class GameTest {
 
@@ -59,7 +61,7 @@ public class GameTest {
     }
 
     @Test
-    public final void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
+    public final void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMore() {
         final int victorScore = 3;
         final int sarahScore = 4;
         for (int index = 1; index <= victorScore; index++) {
@@ -89,7 +91,7 @@ public class GameTest {
     }
 
     @Test
-    public final void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMoreThanTheOpponent() {
+    public final void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMore() {
         final int victorScore = 4;
         final int sarahScore = 3;
         for (int index = 1; index <= victorScore; index++) {
