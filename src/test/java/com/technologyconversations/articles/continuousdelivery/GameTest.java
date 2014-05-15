@@ -61,7 +61,7 @@ public class GameTest {
     }
 
     @Test
-    public final void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMore() {
+    public final void advantageShouldBeDescriptionWhenAtLeastThreePointsHaveBeenScoredByBothAndPlayerHasOnePointMore() {
         final int victorScore = 3;
         final int sarahScore = 4;
         for (int index = 1; index <= victorScore; index++) {
