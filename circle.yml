@@ -1,3 +1,5 @@
 machine:
+  environment:
+    TERM: dumb
   java:
     version: openjdk7
