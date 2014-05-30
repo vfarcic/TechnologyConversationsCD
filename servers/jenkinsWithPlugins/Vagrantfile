@@ -7,7 +7,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.provision "docker" do |d|
     d.run "vfarcic/cd_jenkins_with_plugins",
-      args: "-d -p 0.0.0.0:49153:8080"
+      args: "-d -p 0.0.0.0:49153:8080 -v /data/jenkins:/jenkins"
   end
   config.vm.network :forwarded_port, host: 4567, guest: 49153
 end
