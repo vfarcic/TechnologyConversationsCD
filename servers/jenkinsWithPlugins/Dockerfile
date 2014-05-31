@@ -23,6 +23,7 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 # Jenkins
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
 RUN ln -sf /jenkins /root/.jenkins
+RUN mkdir -p /jenkins/plugins
 
 # Jenkins: Dependency plugins
 ADD https://updates.jenkins-ci.org/latest/credentials.hpi /jenkins/plugins/credentials.hpi
