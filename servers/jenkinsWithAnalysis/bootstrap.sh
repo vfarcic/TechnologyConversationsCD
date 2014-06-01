@@ -1,7 +1,7 @@
 # Jenkins: Jobs
 
 mkdir -p /data/jenkins/jobs/myFirstJob
-cp myFirstJob/config.xml /data/jenkins/jobs/myFirstJob/.
+cp /vagrant/myFirstJob/config.xml /data/jenkins/jobs/myFirstJob/.
 
 # Jenkins: Dependency plugins
 mkdir -p /data/jenkins/plugins

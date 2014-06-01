@@ -5,10 +5,10 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise64"
-  config.vm.provision "shell", path: "bootstrap.sh"
+  # config.vm.provision "shell", path: "bootstrap.sh"
   config.vm.provision "docker" do |d|
     d.run "vfarcic/cd_jenkins_with_analysis",
-      args: "-d -p 0.0.0.0:49153:8080 -v /data/jenkins:/jenkins"
+      args: "-d -p 0.0.0.0:8080:8080 -v /data/jenkins:/jenkins"
   end
   config.vm.network :forwarded_port, host: 8080, guest: 8080
 end
