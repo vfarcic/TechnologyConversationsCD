@@ -1,32 +1,11 @@
-# General
-echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
-apt-get update && apt-get clean
-apt-get install -q -y wget
-apt-get install -q -y unzip
+# Jenkins: Jobs
 
-# JDK
-apt-get install -q -y openjdk-7-jdk && apt-get clean
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
-# GIT
-apt-get install -q -y git
-
-# Gradle
-mkdir /opt/
-cd /opt/
-wget https://services.gradle.org/distributions/gradle-1.12-all.zip
-unzip /opt/gradle-1.12-all.zip -d /opt/
-export GRADLE_HOME=/opt/gradle-1.12
-export PATH=$PATH:$GRADLE_HOME/bin
-
-# Jenkins
-cd /opt/
-wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-ln -sf /jenkins /root/.jenkins
+mkdir -p /data/jenkins/jobs/myFirstJob
+cp myFirstJob/config.xml /data/jenkins/jobs/myFirstJob/.
 
 # Jenkins: Dependency plugins
-mkdir -p /jenkins/plugins
-cd /jenkins/plugins
+mkdir -p /data/jenkins/plugins
+cd /data/jenkins/plugins
 wget https://updates.jenkins-ci.org/latest/credentials.hpi
 wget https://updates.jenkins-ci.org/latest/ssh-credentials.hpi
 wget https://updates.jenkins-ci.org/latest/promoted-builds.hpi
@@ -51,5 +30,3 @@ wget https://updates.jenkins-ci.org/latest/analysis-collector.hpi
 wget https://updates.jenkins-ci.org/latest/checkstyle.hpi
 wget https://updates.jenkins-ci.org/latest/findbugs.hpi
 wget https://updates.jenkins-ci.org/latest/pmd.hpi
-
-java -jar /opt/jenkins.war
