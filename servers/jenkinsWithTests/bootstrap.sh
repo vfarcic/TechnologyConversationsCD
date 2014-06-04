@@ -31,3 +31,4 @@ wget https://updates.jenkins-ci.org/latest/analysis-collector.hpi
 wget https://updates.jenkins-ci.org/latest/checkstyle.hpi
 wget https://updates.jenkins-ci.org/latest/findbugs.hpi
 wget https://updates.jenkins-ci.org/latest/pmd.hpi
+wget https://updates.jenkins-ci.org/latest/htmlpublisher.hpi
