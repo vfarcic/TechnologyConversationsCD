@@ -7,3 +7,5 @@ machine:
 test:
   override:
     - gradle check
+  post:
+    - cp -R build/reports/tests/* $CIRCLE_ARTIFACTS
