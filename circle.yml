@@ -3,3 +3,7 @@ machine:
     TERM: dumb
   java:
     version: openjdk7
+
+test:
+  override:
+    - gradle check
