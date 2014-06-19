@@ -31,3 +31,6 @@ wget https://updates.jenkins-ci.org/latest/analysis-collector.hpi
 wget https://updates.jenkins-ci.org/latest/checkstyle.hpi
 wget https://updates.jenkins-ci.org/latest/findbugs.hpi
 wget https://updates.jenkins-ci.org/latest/pmd.hpi
+
+echo "docker run -d -p 0.0.0.0:8080:8080 -v /data/jenkins:/jenkins vfarcic/cd_jenkins_with_analysis" >/opt/start_docker_with_jenkins.sh
+chmod 744 /opt/start_docker_with_jenkins.sh
