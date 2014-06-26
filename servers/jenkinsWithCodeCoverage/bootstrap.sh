@@ -32,6 +32,7 @@ wget https://updates.jenkins-ci.org/latest/checkstyle.hpi
 wget https://updates.jenkins-ci.org/latest/findbugs.hpi
 wget https://updates.jenkins-ci.org/latest/pmd.hpi
 wget https://updates.jenkins-ci.org/latest/htmlpublisher.hpi
+wget https://updates.jenkins-ci.org/latest/jacoco.hpi
 
 echo "docker run -d -p 0.0.0.0:8080:8080 -v /data/jenkins:/jenkins vfarcic/cd_jenkins_with_analysis" >/opt/cd_jenkins_with_analysis.sh
 chmod 744 /opt/cd_jenkins_with_analysis.sh

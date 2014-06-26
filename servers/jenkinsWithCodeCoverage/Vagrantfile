@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   config.vm.network :forwarded_port, host: 8080, guest: 8080
   config.vm.provider "virtualbox" do |v|
-    v.name = "jenkinsWithTests"
+    v.name = "jenkinsWithCodeCoverage"
     v.memory = 1024
   end
 end
