@@ -8,4 +8,4 @@ test:
   override:
     - gradle check jacocoTestReport
   post:
-    - cp -R build/reports/tests/* $CIRCLE_ARTIFACTS
+    - cp -R build/reports/* $CIRCLE_ARTIFACTS
