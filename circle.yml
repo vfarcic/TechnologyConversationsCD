@@ -6,6 +6,6 @@ machine:
 
 test:
   override:
-    - gradle check
+    - gradle check jacocoTestReport
   post:
     - cp -R build/reports/tests/* $CIRCLE_ARTIFACTS
